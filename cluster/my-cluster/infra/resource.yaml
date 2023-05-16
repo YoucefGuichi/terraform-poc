@@ -1,4 +1,16 @@
-apiVersion: infra.contrib.fluxcd.io/v1alpha1
+---
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: GitRepository
+metadata:
+  name: helloworld
+  namespace: flux-system
+spec:
+  interval: 30s
+  url: https://github.com/tf-controller/helloworld
+  ref:
+    branch: main
+---    
+apiVersion: infra.contrib.fluxcd.io/v1alpha2
 kind: Terraform
 metadata:
   name: helloworld
@@ -10,4 +22,4 @@ spec:
   sourceRef:
     kind: GitRepository
     name: helloworld
-    namespace: flux-system 
+    namespace: flux-system
