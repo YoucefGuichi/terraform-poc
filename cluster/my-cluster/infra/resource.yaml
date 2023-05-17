@@ -18,8 +18,8 @@ metadata:
 spec:
   interval: 1m
   approvePlan: auto
-  path: ./
+  path: ./resources
   sourceRef:
     kind: GitRepository
-    name: helloworld
+    name: flux-system
     namespace: flux-system
